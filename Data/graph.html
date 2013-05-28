@@ -1,0 +1,33 @@
+
+<!DOCTYPE html> 
+<html> 
+  <head> 
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7; IE=EmulateIE9"> 
+    <title>Battery Data</title> 
+    <script type="text/javascript" src="http://dygraphs.com/dygraph-combined.js"></script>
+ 
+    <style type="text/css"> 
+    #bordered {
+      border: 1px solid red;
+    }
+    </style> 
+  </head> 
+  <body> 
+    <p>Battery Data</p>
+    <div id="roll14" style="width:1600px; height:600px;"></div> 
+    <script type="text/javascript"> 
+      g1 = new Dygraph(
+          document.getElementById("roll14"),
+          'weymouth2013.csv',
+          { 
+            rollPeriod: 14,
+            customBars: true,
+            title: 'Battery data',
+            ylabel: 'Voltage (V)',
+            legend: 'always',
+            labelsDivStyles: { 'textAlign': 'right' }
+          }
+      );
+    </script> 
+  </body> 
+</html> 
